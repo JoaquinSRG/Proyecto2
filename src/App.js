@@ -1,17 +1,21 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
-import Homepage from "./pages/home";
 import Registration from "./pages/registration";
 
+import React, { useState } from 'react';
+import Homepage from "./pages/home";
+
+
 function App() {
+  const [vistaActual, setVistaActual] = useState('home');
+
+  const cambiarVista = (vista) => {
+    setVistaActual(vista);
+  };
+
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="registration" element={<Registration />} />
-        </Routes>
-      </BrowserRouter>
-      <Homepage />
+    <div>
+      {vistaActual === 'registrar' && <Registration cambiarVista={cambiarVista} />}
+      {vistaActual === 'home' && <Homepage cambiarVista={cambiarVista} />}
     </div>
   );
 }

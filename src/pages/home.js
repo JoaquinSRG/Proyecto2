@@ -5,7 +5,7 @@ import iconoHistoria from "../media/img_baner-historia.png";
 
 import "../pages/home.css";
 
-function Homepage() {
+function Homepage({cambiarVista}) {
   return (
     <div>
       <header>
@@ -49,7 +49,7 @@ function Homepage() {
               </a>
             </li>
             <li className="list_item">
-              <a className="link" href="/registration">
+              <a className="link" onClick={() => cambiarVista('registrar')}>
                 Registrate
               </a>
             </li>

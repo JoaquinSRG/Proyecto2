@@ -1,6 +1,6 @@
 import "../pages/registration.css";
 
-export default function Registration() {
+export default function Registration({ cambiarVista }) {
   return (
     <>
       <h2>Registro de Usuario</h2>
@@ -17,7 +17,7 @@ export default function Registration() {
         <label for="password">Contraseña:</label>
         <input type="password" id="password" name="password" required></input>
         <br></br>
-        <input type="submit" value="Completa Registro"></input>
+        <button onClick={() => cambiarVista('registrar')}>Ir a Registrar</button>
       </form>
     </>
   );
